@@ -1,0 +1,11 @@
+# 原稿(只在本地保留, 不上传)
+AI revised by Li.docx
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
