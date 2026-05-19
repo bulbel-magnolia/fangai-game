@@ -983,5 +983,5 @@ const GAME_DATA = {
     }
   },
 
-  shareUrl: "https://example.com/fangaigame"
+  shareUrl: "https://bulbel-magnolia.github.io/fangai-game/"
 };
