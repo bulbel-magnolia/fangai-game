@@ -7,7 +7,7 @@ const TAG_LABELS = {
   risk:    "风险预警",
   healthy: "理性主线",
   anxious: "焦虑敏感",
-  tech:    "AI 赋能"
+  tech:    "主动行动"
 };
 
 const LETTERS = ["A", "B", "C", "D"];
@@ -103,7 +103,7 @@ function renderCover() {
     html: "开始 <span style='margin-left:4px'>→</span>"
   }));
 
-  screen.appendChild(el("div", { class: "cover-meta", text: "「医声有AI」科普游戏 · ClinicalKey AI" }));
+  screen.appendChild(el("div", { class: "cover-meta", text: "「医声有AI」防癌科普游戏" }));
 
   $page.appendChild(screen);
 }
@@ -315,7 +315,7 @@ function renderEnding() {
   const distLine = el("p", {
     text:
       `理性主线 ${state.tally.healthy} · ` +
-      `AI 赋能 ${state.tally.tech} · ` +
+      `主动行动 ${state.tally.tech} · ` +
       `焦虑敏感 ${state.tally.anxious} · ` +
       `风险预警 ${state.tally.risk}  ( 共 ${total} 题 )`
   });
@@ -361,7 +361,7 @@ function renderEnding() {
   // 页脚
   screen.appendChild(el("div", {
     class: "page-footer",
-    text: "「医声有AI」防癌科普游戏 · 由 ClinicalKey AI 提供专业支撑"
+    text: "「医声有AI」防癌科普游戏 · 本作的医学知识与防癌规范均引自 ClinicalKey AI 平台"
   }));
 
   $page.appendChild(screen);
