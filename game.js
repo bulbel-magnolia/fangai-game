@@ -27,6 +27,14 @@ const $topbarRoute = document.getElementById("topbar-route");
 const $topbarStep = document.getElementById("topbar-step");
 const $progressFill = document.getElementById("progress-fill");
 const $restartBtn = document.getElementById("restart-btn");
+const $siteHeader = document.getElementById("site-header");
+const $siteHeaderInner = document.getElementById("site-header-inner");
+
+const SITE_HEADER_TITLE = "ClinicalKey AI 防癌科普游戏";
+const SITE_HEADER_META_LINES = [
+  "「医声有AI」防癌科普游戏",
+  "本作的医学知识与防癌规范均引自 ClinicalKey AI 平台"
+];
 
 $restartBtn.addEventListener("click", () => {
   if (confirm("确认重新开始?当前进度将清空。")) reset();
@@ -65,6 +73,22 @@ function scrollIntoSoft(node) {
 }
 
 /* ======== 顶部进度 ======== */
+
+function updateSiteHeader() {
+  const isTitleScreen = state.screen === "cover" || state.screen === "ending";
+  $siteHeader.className = "site-header " + (isTitleScreen ? "site-header--title" : "site-header--meta");
+  while ($siteHeaderInner.firstChild) $siteHeaderInner.removeChild($siteHeaderInner.firstChild);
+  if (isTitleScreen) {
+    $siteHeaderInner.textContent = SITE_HEADER_TITLE;
+  } else {
+    SITE_HEADER_META_LINES.forEach(text => {
+      const line = document.createElement("div");
+      line.className = "site-header-line";
+      line.textContent = text;
+      $siteHeaderInner.appendChild(line);
+    });
+  }
+}
 
 function updateTopbar() {
   if (state.screen === "question" || state.screen === "routeIntro") {
@@ -398,6 +422,7 @@ function render() {
     case "question":   renderQuestion(); break;
     case "ending":     renderEnding(); break;
   }
+  updateSiteHeader();
   updateTopbar();
   if (state.screen !== "question" || state.qIndex === 0) {
     scrollToTopSmooth();
