@@ -382,6 +382,19 @@ function renderEnding() {
   }));
   screen.appendChild(actions);
 
+  // 平台介绍 (可滚动小字框)
+  const aboutBox = el("div", { class: "about-ck" });
+  aboutBox.appendChild(el("div", { class: "about-ck-label", text: "关于 ClinicalKey AI" }));
+  const aboutBody = el("div", { class: "about-ck-body" });
+  [
+    "由爱思唯尔研发的 ClinicalKey AI 是专业临床智能工具,可减少文献检索耗时,助力培养临床诊疗思维。",
+    "它支持自然语言问答与追问,答复附带权威文献溯源,能结合患者情况定制内容,可管理记录、分享问答。",
+    "平台囊括海量指南、期刊与医学专著,快速辅助临床研判诊疗方案。内容经专业医师审核核验,结果均可溯源原文。",
+    "新版界面便捷好用,搭配语音查询,可切换成人与儿科视角,适配各类临床场景。"
+  ].forEach(p => aboutBody.appendChild(el("p", { text: p })));
+  aboutBox.appendChild(aboutBody);
+  screen.appendChild(aboutBox);
+
   // 页脚
   screen.appendChild(el("div", {
     class: "page-footer",

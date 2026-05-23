@@ -762,6 +762,56 @@ button {
   border-color: var(--ink);
 }
 
+/* ============================== 关于 ClinicalKey AI (可滚动) ============================== */
+
+.about-ck {
+  margin-top: 56px;
+}
+
+.about-ck-label {
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.about-ck-body {
+  max-height: 132px;
+  overflow-y: auto;
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--ink-mute);
+  padding: 14px 16px;
+  background: var(--surface-soft);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  -webkit-overflow-scrolling: touch;
+  text-align: left;
+}
+
+.about-ck-body p + p {
+  margin-top: 8px;
+}
+
+.about-ck-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.about-ck-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.about-ck-body::-webkit-scrollbar-thumb {
+  background: var(--hairline-strong);
+  border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+  .about-ck-body { font-size: 11.5px; max-height: 120px; padding: 12px 14px; }
+}
+
 /* ============================== 页脚 ============================== */
 
 .page-footer {
